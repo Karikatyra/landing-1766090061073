@@ -36,7 +36,49 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* Animations */
+/* 3D to 2D Animation for Headline */
+.perspective-container {
+    perspective: 1000px;
+}
+
+.hero-3d-text {
+    /* Starting state handled by keyframes, but defined here for fallback */
+    transform-style: preserve-3d;
+    display: inline-block;
+    animation: collapse3D 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes collapse3D {
+    0% {
+        opacity: 0;
+        transform: rotateX(60deg) scale(1.2) translateY(50px);
+        letter-spacing: 0.1em;
+        text-shadow: 
+            0 1px 0 #ccc,
+            0 2px 0 #c9c9c9,
+            0 3px 0 #bbb,
+            0 4px 0 #b9b9b9,
+            0 5px 0 #aaa,
+            0 6px 1px rgba(0,0,0,.1),
+            0 0 5px rgba(0,0,0,.1),
+            0 1px 3px rgba(0,0,0,.3),
+            0 3px 5px rgba(0,0,0,.2),
+            0 5px 10px rgba(0,0,0,.25),
+            0 10px 10px rgba(0,0,0,.2),
+            0 20px 20px rgba(0,0,0,.15);
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg) scale(1) translateY(0);
+        letter-spacing: normal;
+        text-shadow: none; /* Flatten to 2D */
+    }
+}
+
+/* Standard Fade Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -46,12 +88,12 @@ body {
     animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Gradient Text Utilities */
-.text-gradient {
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(to right, #E11D48, #F97316);
+.animate-fade-in-delay {
+    animation: fadeIn 0.8s ease-out 0.8s forwards;
+}
+
+.animate-fade-in-delay-2 {
+    animation: fadeIn 0.8s ease-out 1.2s forwards;
 }
 
 /* Specific Section Styles */

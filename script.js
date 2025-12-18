@@ -46,13 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('shadow-lg');
             // Keep background if menu is open
             if (!isMenuOpen) {
-                // We keep the class in HTML by default, but you could toggle transparency here
-                // For this design, we kept it semi-transparent/solid consistent
+                header.classList.remove('bg-slate-900/95');
             }
         }
     });
 
-    // Add simple reveal animation for elements on scroll
+    // Simple fade-in observer for elements on scroll
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -63,24 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-fade-in-up');
+                entry.target.classList.remove('opacity-0');
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Target elements to animate
-    document.querySelectorAll('article, .feature-card').forEach(el => {
-        el.style.opacity = '0'; // Hide initially
+    document.querySelectorAll('article').forEach(el => {
+        el.classList.add('opacity-0'); // Prepare for animation
         observer.observe(el);
     });
-    
-    // Fix initial opacity via CSS class addition dynamically
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .animate-fade-in-up {
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 1 !important;
-        }
-    `;
-    document.head.appendChild(style);
 });
