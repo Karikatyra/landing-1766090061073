@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Авторское спортивное шоу Максима Волкова. Честный взгляд на футбол, хоккей и единоборства. Интервью, аналитика, инсайды.">
+    <title>GAME PLAN | Авторское спортивное шоу</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#E11D48',
+                            dark: '#0F172A',
+                            accent: '#FCD34D'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-900 text-white font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 bg-brand-red rounded flex items-center justify-center transform group-hover:skew-x-6 transition-transform">
+                        <span class="font-display font-bold text-xl text-white">GP</span>
+                    </div>
+                    <span class="font-display font-bold text-2xl tracking-wider">GAME<span class="text-brand-red">PLAN</span></span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#episodes" class="text-slate-300 hover:text-white hover:text-brand-red transition-colors font-medium">Выпуски</a>
+                    <a href="#about" class="text-slate-300 hover:text-white hover:text-brand-red transition-colors font-medium">Об авторе</a>
+                    <a href="#guests" class="text-slate-300 hover:text-white hover:text-brand-red transition-colors font-medium">Гости</a>
+                    <a href="#subscribe" class="px-5 py-2.5 bg-brand-red hover:bg-red-700 text-white font-bold rounded transition-colors flex items-center gap-2">
+                        <i data-lucide="play-circle" class="w-4 h-4"></i>
+                        Смотреть
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white">
+                    <i data-lucide="menu" class="w-8 h-8"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#episodes" class="block px-3 py-3 text-slate-300 hover:bg-slate-800 hover:text-white rounded-md text-lg">Выпуски</a>
+                <a href="#about" class="block px-3 py-3 text-slate-300 hover:bg-slate-800 hover:text-white rounded-md text-lg">Об авторе</a>
+                <a href="#guests" class="block px-3 py-3 text-slate-300 hover:bg-slate-800 hover:text-white rounded-md text-lg">Гости</a>
+                <a href="#subscribe" class="block mt-4 px-3 py-3 bg-brand-red text-white text-center rounded-md font-bold">Смотреть шоу</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center pt-20">
+            <!-- Background Image Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://placehold.co/1920x1080/0f172a/1e293b?text=Stadium+Background" alt="Background" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/20 border border-brand-red/30 text-brand-red mb-6 animate-fade-in-up">
+                        <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+                        <span class="text-sm font-bold tracking-wide uppercase">Новый сезон уже в эфире</span>
+                    </div>
+                    
+                    <h1 class="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-tight mb-6 uppercase">
+                        Спорт <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-orange-500">Без Цензуры</span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
+                        Авторское шоу Максима Волкова. Разборы матчей, инсайды из раздевалок и откровенные интервью с легендами спорта.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#episodes" class="px-8 py-4 bg-brand-red hover:bg-red-700 text-white font-bold text-lg rounded transition-transform hover:scale-105 flex items-center justify-center gap-2">
+                            <i data-lucide="youtube" class="w-6 h-6"></i>
+                            Последний выпуск
+                        </a>
+                        <a href="#about" class="px-8 py-4 bg-transparent border-2 border-slate-600 hover:border-white text-white font-bold text-lg rounded transition-colors flex items-center justify-center">
+                            О проекте
+                        </a>
+                    </div>
+
+                    <!-- Social Proof -->
+                    <div class="mt-12 flex items-center gap-6 text-slate-400">
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-display font-bold text-white">500K+</span>
+                            <span class="text-sm">Подписчиков</span>
+                        </div>
+                        <div class="w-px h-12 bg-slate-700"></div>
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-display font-bold text-white">10M+</span>
+                            <span class="text-sm">Просмотров</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Episodes -->
+        <section id="episodes" class="py-20 bg-slate-900">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="font-display text-4xl font-bold uppercase mb-2">Свежие <span class="text-brand-red">Выпуски</span></h2>
+                        <p class="text-slate-400">Смотрите эксклюзивные материалы первыми</p>
+                    </div>
+                    <a href="#" class="hidden md:flex items-center gap-2 text-brand-red hover:text-white transition-colors font-medium">
+                        Все видео <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Episode 1 -->
+                    <article class="group bg-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-red/10 transition-all duration-300 border border-slate-700">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="https://placehold.co/600x400/222/FFF?text=Football+Analysis" alt="Episode Thumbnail" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i data-lucide="play-circle" class="w-16 h-16 text-brand-red fill-current"></i>
+                            </div>
+                            <span class="absolute bottom-3 right-3 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded">24:15</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-3 text-sm text-slate-400">
+                                <span class="text-brand-red font-bold">Футбол</span>
+                                <span>- </span>
+                                <span>2 дня назад</span>
+                            </div>
+                            <h3 class="font-display text-xl font-bold mb-3 leading-tight group-hover:text-brand-red transition-colors">
+                                Почему "Спартак" снова провалил сезон? Жесткий разбор тактики.
+                            </h3>
+                            <p class="text-slate-400 text-sm line-clamp-2">
+                                Анализируем ключевые ошибки тренерского штаба и обсуждаем возможные трансферы зимы.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Episode 2 -->
+                    <article class="group bg-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-red/10 transition-all duration-300 border border-slate-700">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="https://placehold.co/600x400/222/FFF?text=UFC+Interview" alt="Episode Thumbnail" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i data-lucide="play-circle" class="w-16 h-16 text-brand-red fill-current"></i>
+                            </div>
+                            <span class="absolute bottom-3 right-3 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded">45:30</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-3 text-sm text-slate-400">
+                                <span class="text-brand-red font-bold">MMA</span>
+                                <span>- </span>
+                                <span>5 дней назад</span>
+                            </div>
+                            <h3 class="font-display text-xl font-bold mb-3 leading-tight group-hover:text-brand-red transition-colors">
+                                Эксклюзив с Чемпионом: О страхе, деньгах и жизни после октагона.
+                            </h3>
+                            <p class="text-slate-400 text-sm line-clamp-2">
+                                Откровенный разговор о том, что происходит за кулисами больших боев.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Episode 3 -->
+                    <article class="group bg-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-red/10 transition-all duration-300 border border-slate-700">
+                        <div class="relative overflow-hidden aspect-video">
+                            <img src="https://placehold.co/600x400/222/FFF?text=Hockey+News" alt="Episode Thumbnail" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i data-lucide="play-circle" class="w-16 h-16 text-brand-red fill-current"></i>
+                            </div>
+                            <span class="absolute bottom-3 right-3 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded">18:05</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-3 text-sm text-slate-400">
+                                <span class="text-brand-red font-bold">Хоккей</span>
+                                <span>- </span>
+                                <span>1 неделя назад</span>
+                            </div>
+                            <h3 class="font-display text-xl font-bold mb-3 leading-tight group-hover:text-brand-red transition-colors">
+                                КХЛ против НХЛ: Где сейчас реальный уровень хоккея?
+                            </h3>
+                            <p class="text-slate-400 text-sm line-clamp-2">
+                                Сравниваем зарплаты, скорости и медийность двух главных лиг мира.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="mt-8 text-center md:hidden">
+                    <a href="#" class="inline-flex items-center gap-2 text-brand-red font-medium">
+                        Смотреть все выпуски <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Author -->
+        <section id="about" class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-slate-800 transform -skew-y-3 origin-top-left scale-110"></div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <div class="lg:w-1/2 relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-brand-red"></div>
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-brand-red"></div>
+                        <img src="https://placehold.co/600x700/333/FFF?text=Host+Photo" alt="Максим Волков" class="rounded-lg shadow-2xl w-full grayscale hover:grayscale-0 transition-all duration-500">
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <h2 class="font-display text-4xl font-bold uppercase mb-6">Максим <span class="text-brand-red">Волков</span></h2>
+                        <h3 class="text-xl text-slate-300 mb-6 font-medium">Спортивный журналист, комментатор, автор канала "Game Plan"</h3>
+                        
+                        <div class="space-y-4 text-slate-400 leading-relaxed mb-8">
+                            <p>
+                                Более 10 лет в спортивной журналистике. Работал на федеральных каналах, комментировал финалы Чемпионатов Мира и Олимпийские игры.
+                            </p>
+                            <p>
+                                Создал "Game Plan", чтобы говорить о спорте то, что обычно вырезают из эфиров. Здесь нет запретных тем и "удобных" вопросов. Только факты, эмоции и настоящая страсть к игре.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
+                            <div class="text-center p-4 bg-slate-700/50 rounded-lg">
+                                <i data-lucide="mic" class="w-8 h-8 text-brand-red mx-auto mb-2"></i>
+                                <span class="block text-sm font-bold">Подкасты</span>
+                            </div>
+                            <div class="text-center p-4 bg-slate-700/50 rounded-lg">
+                                <i data-lucide="video" class="w-8 h-8 text-brand-red mx-auto mb-2"></i>
+                                <span class="block text-sm font-bold">Видео</span>
+                            </div>
+                            <div class="text-center p-4 bg-slate-700/50 rounded-lg">
+                                <i data-lucide="newspaper" class="w-8 h-8 text-brand-red mx-auto mb-2"></i>
+                                <span class="block text-sm font-bold">Статьи</span>
+                            </div>
+                            <div class="text-center p-4 bg-slate-700/50 rounded-lg">
+                                <i data-lucide="users" class="w-8 h-8 text-brand-red mx-auto mb-2"></i>
+                                <span class="block text-sm font-bold">Клуб</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter / Community -->
+        <section id="subscribe" class="py-20 bg-brand-dark relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#E11D48 1px, transparent 1px); background-size: 30px 30px;"></div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-4xl mx-auto bg-slate-800 rounded-2xl p-8 md:p-12 shadow-2xl border border-slate-700 text-center">
+                    <div class="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="mail" class="w-8 h-8 text-brand-red"></i>
+                    </div>
+                    
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Вступай в закрытый клуб</h2>
+                    <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+                        Получай уведомления о новых выпусках, участвуй в розыгрышах мерча и задавай вопросы гостям эфира.
+                    </p>
+
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Спасибо за подписку!');">
+                        <input type="email" placeholder="Ваш Email" class="flex-1 px-6 py-4 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-brand-red text-white" required>
+                        <button type="submit" class="px-8 py-4 bg-brand-red hover:bg-red-700 text-white font-bold rounded-lg transition-colors shadow-lg hover:shadow-brand-red/25">
+                            Подписаться
+                        </button>
+                    </form>
+                    
+                    <p class="mt-4 text-xs text-slate-500">
+                        Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности. Никакого спама.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-8">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-12 mb-12">
+                    <div class="col-span-1 md:col-span-2">
+                        <a href="#" class="flex items-center gap-2 mb-6">
+                            <div class="w-8 h-8 bg-slate-800 rounded flex items-center justify-center">
+                                <span class="font-display font-bold text-white">GP</span>
+                            </div>
+                            <span class="font-display font-bold text-xl tracking-wider">GAME<span class="text-brand-red">PLAN</span></span>
+                        </a>
+                        <p class="text-slate-400 mb-6 max-w-sm">
+                            Независимое спортивное медиа. Мы показываем спорт таким, какой он есть на самом деле.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:bg-brand-red hover:text-white transition-colors">
+                                <i data-lucide="youtube" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:bg-brand-red hover:text-white transition-colors">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:bg-brand-red hover:text-white transition-colors">
+                                <i data-lucide="twitter" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Навигация</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li><a href="#" class="hover:text-brand-red transition-colors">Главная</a></li>
+                            <li><a href="#episodes" class="hover:text-brand-red transition-colors">Все выпуски</a></li>
+                            <li><a href="#about" class="hover:text-brand-red transition-colors">О проекте</a></li>
+                            <li><a href="#" class="hover:text-brand-red transition-colors">Мерч</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Сотрудничество</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li><a href="#" class="hover:text-brand-red transition-colors">Реклама</a></li>
+                            <li><a href="#" class="hover:text-brand-red transition-colors">Стать гостем</a></li>
+                            <li><a href="#" class="hover:text-brand-red transition-colors">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+                    <p>&copy; 2025 Game Plan Show. Все права защищены.</p>
+                    <div class="flex gap-6">
+                        <a href="#" class="hover:text-white">Политика конфиденциальности</a>
+                        <a href="#" class="hover:text-white">Публичная оферта</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
